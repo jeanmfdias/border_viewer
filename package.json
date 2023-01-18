@@ -1,0 +1,26 @@
+{
+  "name": "border_viewer",
+  "version": "1.0.0",
+  "description": "Project based on challenge [App Idea](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Border-Radius-Previewer.md)",
+  "main": "dist/index.html",
+  "scripts": {
+    "compile": "tsc",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeanmfdias/border_viewer.git"
+  },
+  "keywords": [
+    "challenge"
+  ],
+  "author": "Jean Dias",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeanmfdias/border_viewer/issues"
+  },
+  "homepage": "https://github.com/jeanmfdias/border_viewer#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
