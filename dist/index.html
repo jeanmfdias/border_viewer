@@ -12,20 +12,22 @@
         <h1>Border Radius Viewer</h1>
         <div>
             <label for="">Corner Top Left</label>
-            <input type="number" name="corner_top_left" value="1">
+            <input type="number" name="corner_top_left" id="corner_top_left" data-position="top-left" value="1">
 
             <label for="">Corner Top Right</label>
-            <input type="number" name="corner_top_right" value="1">
+            <input type="number" name="corner_top_right" id="corner_top_right" data-position="top-right" value="1">
 
             <label for="">Corner Bottom Left</label>
-            <input type="number" name="corner_top_left" value="1">
+            <input type="number" name="corner_bottom_left" id="corner_bottom_left" data-position="bottom-left" value="1">
 
             <label for="">Corner Bottom Left</label>
-            <input type="number" name="corner_top_left" value="1">
+            <input type="number" name="corner_bottom_right" id="corner_bottom_right" data-position="bottom-right" value="1">
         </div>
         <div class="container">
             <div class="object_focus"></div>
         </div>
     </div>
+
+    <script src="js/app.js" type="module"></script>
 </body>
 </html>
