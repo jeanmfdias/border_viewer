@@ -4,6 +4,7 @@ const inputTopLeft = document.querySelector('#corner_top_left');
 const inputBottomRight = document.querySelector('#corner_bottom_right');
 const inputBottomLeft = document.querySelector('#corner_bottom_left');
 const divObjectFocus = document.querySelector('.object_focus');
+const divClipboard = document.querySelector('.clipboard');
 const border = new Border(1, 1, 1, 1);
 function apply(event, _this) {
     const value = parseInt(_this.value);
@@ -29,6 +30,7 @@ function apply(event, _this) {
         border-bottom-right-radius: ${border.bottomRight}px;
     `;
     divObjectFocus.setAttribute("style", style);
+    divClipboard.innerHTML = style;
 }
 inputTopLeft.addEventListener('change', event => apply(event, inputTopLeft));
 inputTopRight.addEventListener('change', event => apply(event, inputTopRight));

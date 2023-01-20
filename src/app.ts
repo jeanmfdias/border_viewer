@@ -5,6 +5,7 @@ const inputTopLeft: HTMLInputElement = document.querySelector('#corner_top_left'
 const inputBottomRight: HTMLInputElement = document.querySelector('#corner_bottom_right');
 const inputBottomLeft: HTMLInputElement = document.querySelector('#corner_bottom_left');
 const divObjectFocus: HTMLDivElement = document.querySelector('.object_focus');
+const divClipboard: HTMLDivElement = document.querySelector('.clipboard');
 
 const border = new Border(1, 1, 1, 1);
 
@@ -34,6 +35,7 @@ function apply(event: Event, _this: HTMLInputElement) {
         border-bottom-right-radius: ${border.bottomRight}px;
     `;
     divObjectFocus.setAttribute("style", style);
+    divClipboard.innerHTML = style;
 }
 
 inputTopLeft.addEventListener('change', event => apply(event, inputTopLeft));

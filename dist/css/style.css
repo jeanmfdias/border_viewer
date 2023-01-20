@@ -15,3 +15,10 @@ body {
     width: 500px;
     height: 500px;
 }
+
+.clipboard {
+    border: 1px solid #000;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px 10px;
+}
