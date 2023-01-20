@@ -38,7 +38,13 @@ function apply(event: Event, _this: HTMLInputElement) {
     divClipboard.innerHTML = style;
 }
 
+function copyToClipboard(event: Event): void {
+    const copy = divClipboard.innerHTML;   
+    navigator.clipboard.writeText(copy);
+}
+
 inputTopLeft.addEventListener('change', event => apply(event, inputTopLeft));
 inputTopRight.addEventListener('change', event => apply(event, inputTopRight));
 inputBottomLeft.addEventListener('change', event => apply(event, inputBottomLeft));
 inputBottomRight.addEventListener('change', event => apply(event, inputBottomRight));
+divClipboard.addEventListener('click', event => copyToClipboard(event));
