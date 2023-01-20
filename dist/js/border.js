@@ -1,32 +1,60 @@
 export class Border {
-    constructor(tl, tr, bl, br) {
-        this._topLeft = tl;
-        this._topRight = tr;
-        this._bottomLeft = bl;
-        this._bottomRight = br;
+    constructor(tlX, tlY, trX, trY, blX, blY, brX, brY) {
+        this._topLeftX = tlX;
+        this._topLeftY = tlY;
+        this._topRightX = trX;
+        this._topRightY = trY;
+        this._bottomLeftX = blX;
+        this._bottomLeftY = blY;
+        this._bottomRightX = brX;
+        this._bottomRightY = brY;
     }
-    get topLeft() {
-        return this._topLeft;
+    get topLeftX() {
+        return this._topLeftX;
     }
-    get topRight() {
-        return this._topRight;
+    get topLeftY() {
+        return this._topLeftY;
     }
-    get bottomLeft() {
-        return this._bottomLeft;
+    get topRightX() {
+        return this._topRightX;
     }
-    get bottomRight() {
-        return this._bottomRight;
+    get topRightY() {
+        return this._topRightY;
     }
-    setTopLeft(tl) {
-        this._topLeft = tl;
+    get bottomLeftX() {
+        return this._bottomLeftX;
     }
-    setTopRight(tr) {
-        this._topRight = tr;
+    get bottomLeftY() {
+        return this._bottomLeftY;
     }
-    setBottomLeft(bl) {
-        this._bottomLeft = bl;
+    get bottomRightX() {
+        return this._bottomRightX;
     }
-    setBottomRight(br) {
-        this._bottomRight = br;
+    get bottomRightY() {
+        return this._bottomRightY;
+    }
+    setTopLeftX(tl) {
+        this._topLeftX = tl;
+    }
+    setTopLeftY(tl) {
+        this._topLeftY = tl;
+    }
+    setTopRightX(tr) {
+        this._topRightX = tr;
+    }
+    setTopRightY(tr) {
+        this._topRightY = tr;
+    }
+    setBottomLeftX(bl) {
+        this._bottomLeftX = bl;
+    }
+    setBottomLeftY(bl) {
+        this._bottomLeftY = bl;
+    }
+    setBottomRightX(br) {
+        this._bottomRightX = br;
+    }
+    setBottomRightY(br) {
+        this._bottomRightY = br;
     }
 }

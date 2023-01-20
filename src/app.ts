@@ -1,38 +1,54 @@
 import { Border } from "./border.js";
 
-const inputTopRight: HTMLInputElement = document.querySelector('#corner_top_right');
-const inputTopLeft: HTMLInputElement = document.querySelector('#corner_top_left');
-const inputBottomRight: HTMLInputElement = document.querySelector('#corner_bottom_right');
-const inputBottomLeft: HTMLInputElement = document.querySelector('#corner_bottom_left');
+const inputTopRightX: HTMLInputElement = document.querySelector('#corner_top_right_x');
+const inputTopRightY: HTMLInputElement = document.querySelector('#corner_top_right_y');
+const inputTopLeftX: HTMLInputElement = document.querySelector('#corner_top_left_x');
+const inputTopLeftY: HTMLInputElement = document.querySelector('#corner_top_left_y');
+const inputBottomRightX: HTMLInputElement = document.querySelector('#corner_bottom_right_x');
+const inputBottomRightY: HTMLInputElement = document.querySelector('#corner_bottom_right_y');
+const inputBottomLeftX: HTMLInputElement = document.querySelector('#corner_bottom_left_x');
+const inputBottomLeftY: HTMLInputElement = document.querySelector('#corner_bottom_left_y');
 const divObjectFocus: HTMLDivElement = document.querySelector('.object_focus');
 const divClipboard: HTMLDivElement = document.querySelector('.clipboard');
 
-const border = new Border(1, 1, 1, 1);
+const border = new Border(1, 1, 1, 1, 1, 1, 1, 1);
 
 function apply(event: Event, _this: HTMLInputElement) {
     const value = parseInt(_this.value);
     const local = _this.getAttribute('data-position');
 
     switch (local) {
-        case 'top-left': 
-            border.setTopLeft(value);
+        case 'top-left-x': 
+            border.setTopLeftX(value);
             break;
-        case 'top-right':
-            border.setTopRight(value);
+        case 'top-left-y': 
+            border.setTopLeftY(value);
             break;
-        case 'bottom-left':
-            border.setBottomLeft(value);
+        case 'top-right-x':
+            border.setTopRightX(value);
             break;
-        case 'bottom-right':
-            border.setBottomRight(value);
+        case 'top-right-y':
+            border.setTopRightY(value);
+            break;
+        case 'bottom-left-x':
+            border.setBottomLeftX(value);
+            break;
+        case 'bottom-left-y':
+            border.setBottomLeftY(value);
+            break;
+        case 'bottom-right-x':
+            border.setBottomRightX(value);
+            break;
+        case 'bottom-right-y':
+            border.setBottomRightY(value);
             break;
     }
 
     const style = `
-        border-top-left-radius: ${border.topLeft}px;
-        border-top-right-radius: ${border.topRight}px;
-        border-bottom-left-radius: ${border.bottomLeft}px;
-        border-bottom-right-radius: ${border.bottomRight}px;
+        border-top-left-radius: ${border.topLeftX}px ${border.topLeftY}px;
+        border-top-right-radius: ${border.topRightX}px ${border.topRightY}px;
+        border-bottom-left-radius: ${border.bottomLeftX}px ${border.bottomLeftY}px;
+        border-bottom-right-radius: ${border.bottomRightX}px ${border.bottomRightY}px;
     `;
     divObjectFocus.setAttribute("style", style);
     divClipboard.innerHTML = style;
@@ -43,8 +59,12 @@ function copyToClipboard(event: Event): void {
     navigator.clipboard.writeText(copy);
 }
 
-inputTopLeft.addEventListener('change', event => apply(event, inputTopLeft));
-inputTopRight.addEventListener('change', event => apply(event, inputTopRight));
-inputBottomLeft.addEventListener('change', event => apply(event, inputBottomLeft));
-inputBottomRight.addEventListener('change', event => apply(event, inputBottomRight));
+inputTopLeftX.addEventListener('change', event => apply(event, inputTopLeftX));
+inputTopLeftY.addEventListener('change', event => apply(event, inputTopLeftY));
+inputTopRightX.addEventListener('change', event => apply(event, inputTopRightX));
+inputTopRightY.addEventListener('change', event => apply(event, inputTopRightY));
+inputBottomLeftX.addEventListener('change', event => apply(event, inputBottomLeftX));
+inputBottomLeftY.addEventListener('change', event => apply(event, inputBottomLeftY));
+inputBottomRightX.addEventListener('change', event => apply(event, inputBottomRightX));
+inputBottomRightY.addEventListener('change', event => apply(event, inputBottomRightY));
 divClipboard.addEventListener('click', event => copyToClipboard(event));
